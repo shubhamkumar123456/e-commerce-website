@@ -1,0 +1,14 @@
+.itemcomponent{
+    display: grid;
+    grid-template-columns: repeat(2, 300px);
+    justify-content: center;
+    align-items: center;
+    gap:5rem
+}
+
+
+.priceAndCartDiv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
