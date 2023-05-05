@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import './App.css';
 import Cart from './component/Cart';
 
@@ -8,16 +8,19 @@ import Item from './component/Item';
 import {Button, Navbar} from "react-bootstrap"
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
-import CartState from './store/CartState';
+
+import { CartContext } from './store/CartContext';
 
 function App() {
+
+  const ctx=useContext(CartContext)
 
   const [showCart, setShowCart] = useState(false);
 const cartClick=()=>{
   setShowCart(!showCart)
 }
   return (
- <CartState className="App">
+ <div className="App">
    
     {showCart && <Cart  showCart={showCart} setShowCart={setShowCart}/>}
 <Navbar bg='dark' expand="sm" variant='black'>
@@ -32,7 +35,7 @@ const cartClick=()=>{
            
           </Nav>
           <Button  variant="info" onClick={cartClick}>Cart</Button>
-          <span className='text-white bg-success'>0</span>
+          <span style={{borderRadius:"50%", height:"30px",width:"30px",textAlign:"center"}} className='text-white bg-success p-1'>{ctx.item.length}</span>
        
       </Container>
 </Navbar>
@@ -40,7 +43,7 @@ const cartClick=()=>{
       <Content/>
      <Item/>
  
- </CartState>
+ </div>
   );
 }
 

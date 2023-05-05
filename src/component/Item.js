@@ -6,25 +6,27 @@ import { CartContext } from "../store/CartContext";
 const Item = () => {
 const ctx=useContext(CartContext)
 
-  const handleaddToCart=(id,title,img,price)=>{
+  const handleaddToCart=(id,title,img,price,quantity)=>{
 
     const obj={
       id,
       title,
       img,
-      price
+      price,
+      quantity
     }
-    console.log(obj)
-    
+   
+
     ctx.addItem(obj)
 
   }
-  console.log(ctx.item)
+
   const productsArr = [
     {
       id:1,
       title: "Colors",
       price: 100,
+      quantity:1,
       imageUrl:
         "https://prasadyash2411.github.io/ecom-website/img/Album%201.png",
     },
@@ -33,6 +35,7 @@ const ctx=useContext(CartContext)
       id:2,
       title: "Black and white Colors",
       price: 50,
+      quantity:1,
       imageUrl:
         "https://prasadyash2411.github.io/ecom-website/img/Album%202.png",
     },
@@ -41,6 +44,7 @@ const ctx=useContext(CartContext)
       id:3,
       title: "Yellow and Black Colors",
       price: 70,
+      quantity:1,
       imageUrl:
         "https://prasadyash2411.github.io/ecom-website/img/Album%203.png",
     },
@@ -49,6 +53,7 @@ const ctx=useContext(CartContext)
       id:4,
       title: "Blue Color",
       price: 100,
+      quantity:1,
       imageUrl:
         "https://prasadyash2411.github.io/ecom-website/img/Album%204.png",
     },
@@ -60,7 +65,8 @@ const ctx=useContext(CartContext)
             <img src={product.imageUrl}/>
             <div className="priceAndCartDiv">
             <p>${product.price}</p>
-            <Button variant="primary" onClick={()=>{handleaddToCart(product.id,product.title,product.imageUrl,product.price)}}>Add to cart</Button>
+            <p>{product.quantity? product.quantity:1}</p>
+            <Button variant="primary" onClick={()=>{handleaddToCart(product.id,product.title,product.imageUrl,product.price,product.quantity)}}>Add to cart</Button>
      
             </div>
       

@@ -10,7 +10,30 @@ const CartState=(props)=>{
 
 
     const addItem=(items)=>{
-        setItem(item.concat(items))
+        const findIndex=item.findIndex((itm=>itm.id===items.id))
+        const findItem=item[findIndex]
+        if(findItem){
+            const updatedPrice=findItem.price+items.price
+            const updatedQuantity=findItem.quantity+items.quantity
+            item[findIndex].price=updatedPrice
+            item[findIndex].quantity=updatedQuantity
+    
+          
+            const removedArr= item.filter((itm)=>itm!=items.id)
+            // removedArr.push(newObj)
+            // console.log( removedArr)
+            setItem(removedArr)
+
+        }
+
+      
+        // item[findIndex].price=item[findIndex].price+items.price
+      
+        else{
+            setItem(item.concat(items))
+        }
+       
+
     }
 
     const addPrice=(pri)=>{
