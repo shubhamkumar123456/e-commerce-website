@@ -1,0 +1,42 @@
+.cartcomponent{
+    position: absolute;
+    width: 500px;
+    background-color: aqua;
+    top:3rem;
+    right:0;
+    padding:1rem ;
+}
+.cartcomponentButtonClose{
+    position: absolute;
+    right: 0;
+    top:1rem;
+    right: 1rem;
+}
+.cartcomponent-names{
+    display: flex;
+    gap:4rem
+}
+.cartcomponent-names p{
+    width: 100px;
+    /* background-color: red; */
+    text-align: right;
+    font-size: large;
+    font-weight: bolder;
+}
+
+.cartComponentElements{
+    display: flex;
+    align-items: center;
+    gap:1rem;
+    margin:1rem;
+    border-top: 1.5px solid red;
+    padding-top: 1rem;
+}
+.cartComponentElements img{
+    width: 4rem;
+    border-radius: 10px;
+
+}
+.cartComponentElements p{
+    width:100px
+}
