@@ -1,5 +1,6 @@
 import React from "react";
 import './Item.css'
+import { Button } from "react-bootstrap";
 const Item = () => {
   const productsArr = [
     {
@@ -45,7 +46,8 @@ const Item = () => {
             <img src={product.imageUrl}/>
             <div className="priceAndCartDiv">
             <p>${product.price}</p>
-            <button>Add to cart</button>
+            <Button variant="primary">Add to cart</Button>{' '}
+     
             </div>
       
         </div>
