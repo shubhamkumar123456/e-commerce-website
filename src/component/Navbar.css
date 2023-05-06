@@ -1,0 +1,30 @@
+.navbar{
+    background-color: black;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    color: white;
+    text-align: center;
+
+}
+.navbar-ul{
+    display: flex;
+margin: auto;
+
+    color: white;
+   list-style: none;
+  
+   gap: 3rem;
+ 
+   align-items: center;
+   font-size: 1.3rem;
+  
+}
+.navbar-ul li a{
+    text-decoration: none;
+}
+
+.navbar-cartDiv{
+    position: absolute;
+    right:1rem
+}

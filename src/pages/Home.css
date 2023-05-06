@@ -1,0 +1,39 @@
+.homepageTop{
+    background-color: grey;
+    height: 20rem;
+    
+}
+.homepageTop h1{
+ font-size: 6rem;
+ color: white;
+}
+.homepageTop h3{
+    border: 2px solid aqua;
+    width: 400px;
+    margin: auto;
+    padding: 1rem;
+    color: white;
+    margin-top: 2rem;
+    cursor: pointer;
+}
+.homepageTop i{
+ font-size: 4rem;
+ margin-top: 1rem;
+ cursor: pointer;
+color: grey;
+ background-color: aqua;
+ border-radius: 50%;
+ border: 2px solid aqua;
+}
+.homeTourMapDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+    
+}
+.homeTourMapDiv span{
+    width: 250px;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid aqua;
+}

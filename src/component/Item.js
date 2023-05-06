@@ -65,7 +65,7 @@ const ctx=useContext(CartContext)
             <img src={product.imageUrl}/>
             <div className="priceAndCartDiv">
             <p>${product.price}</p>
-            <p>{product.quantity? product.quantity:1}</p>
+            {/* <p>{product.quantity? product.quantity:1}</p> */}
             <Button variant="primary" onClick={()=>{handleaddToCart(product.id,product.title,product.imageUrl,product.price,product.quantity)}}>Add to cart</Button>
      
             </div>

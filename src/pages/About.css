@@ -1,0 +1,15 @@
+.about .aboutMain{
+    display: flex;
+    width: 1000px;
+    gap: 2rem;
+    text-align: left;
+    margin: auto;
+    /* background-color: red; */
+}
+
+
+
+.about img{
+    width: 250px;
+    border-radius: 50%;
+}

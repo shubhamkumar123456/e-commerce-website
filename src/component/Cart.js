@@ -33,8 +33,8 @@ const Cart = (props) => {
     {arrItems.forEach(element => {
       sum+=element.price
     })}
-     <p>Total Price ${sum}</p>
-     <Button>PURCHASE</Button>
+     <p style={{textAlign:"center"}}>Total Price ${sum}</p>
+     <center><Button>PURCHASE</Button></center>
   </div>;
 };
 
