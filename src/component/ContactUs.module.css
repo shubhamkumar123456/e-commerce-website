@@ -1,0 +1,23 @@
+.contactUsFrom{
+
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  width: 500px;
+  margin: auto;
+  margin-top:1rem;
+  background-color:rgb(222, 218, 218);
+  padding: 2rem;
+  border-radius: 30px;
+}
+.label{
+    margin-bottom:0.5rem ;
+}
+.input{
+    margin-bottom: 1rem;
+}
+.btn{
+    width: 100px;
+    margin: auto;
+}

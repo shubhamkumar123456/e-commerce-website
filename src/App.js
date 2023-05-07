@@ -12,6 +12,7 @@ import Store from "./pages/Store";
 import Home from "./pages/Home";
 import Content from "./component/Content";
 import Item from "./component/Item";
+import ContactUs from "./component/ContactUs";
 
 function App() {
   const ctx = useContext(CartContext);
@@ -34,6 +35,7 @@ function App() {
             <Route path="/about"  element={<About />} />
             <Route path="/store"  element={<Store />} />
             <Route path="/home" element ={<Home/>}/>
+            <Route path="/contactus" element ={<ContactUs/>}/>
           </Routes>
 
      

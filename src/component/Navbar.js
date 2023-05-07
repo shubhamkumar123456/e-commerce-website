@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Button } from "react-bootstrap";
 import { CartContext } from "../store/CartContext";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./Navbar.css";
 
 const Navbar = (props) => {
@@ -12,13 +12,16 @@ const Navbar = (props) => {
     <div className="navbar">
       <ul className="navbar-ul">
         <li>
-          <Link to="/home">Home</Link>
+          <NavLink to="/home">Home</NavLink>
         </li>
         <li>
-          <Link to="/store">Store</Link>
+          <NavLink to="/store">Store</NavLink>
         </li>
         <li>
-          <Link to="/about">About</Link>
+          <NavLink to="/about">About</NavLink>
+        </li>
+        <li>
+          <Link to="/contactus">Contact Us</Link>
         </li>
       </ul>
 
