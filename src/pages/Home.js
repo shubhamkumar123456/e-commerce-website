@@ -45,7 +45,7 @@ const Home = () => {
       <div className='homepageTop'>
           <h1>The Generics</h1>
           <h3>Get our Latest Album</h3>
-          <i class="fas fa-circle-play"></i>
+          <i className="fas fa-circle-play"></i>
       </div>
       <div>
         <h1>Tours</h1>

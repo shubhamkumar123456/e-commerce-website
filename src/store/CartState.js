@@ -5,8 +5,11 @@ const CartState=(props)=>{
     
     const itemInitial=[];
     const priceAmount=[];
+    const productDetail={};
     const [item, setItem] = useState(itemInitial);
     const [price, setprice] = useState(priceAmount);
+    const [productDetails, setproductDetails] = useState(productDetail);
+    
 
 
     const addItem=(items)=>{
@@ -55,8 +58,13 @@ const CartState=(props)=>{
 
     }
 
+    const addProductDetail=(product)=>{
+        // console.log(product)
+        setproductDetails(product)
+    }
+
 return(
-    <CartContext.Provider value={{item,addItem,addPrice,price,removeItem,updateItem}}>
+    <CartContext.Provider value={{item,addItem,addPrice,price,removeItem,updateItem,addProductDetail,productDetails}}>
         {props.children}
     </CartContext.Provider>
 )

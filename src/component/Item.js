@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import './Item.css'
 import { Button } from "react-bootstrap";
 import { CartContext } from "../store/CartContext";
+import { Link } from "react-router-dom";
 
 const Item = () => {
 const ctx=useContext(CartContext)
@@ -58,11 +59,19 @@ const ctx=useContext(CartContext)
         "https://prasadyash2411.github.io/ecom-website/img/Album%204.png",
     },
   ];
+
+  const handleImgclick=(product)=>{
+    ctx.addProductDetail(product)
+  }
+
+
   return <div className="itemcomponent">
     {productsArr.map((product)=>{
-        return <div className="itemProduct">
+      const productid=product.id
+        return <div className="itemProduct" key={product.id}>
+          
             <p>{product.title}</p>
-            <img src={product.imageUrl}/>
+            <Link exact to={`${productid}`}><img src={product.imageUrl} onClick={()=>{handleImgclick(product)}}/></Link>
             <div className="priceAndCartDiv">
             <p>${product.price}</p>
             {/* <p>{product.quantity? product.quantity:1}</p> */}
