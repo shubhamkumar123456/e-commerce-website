@@ -17,7 +17,8 @@ const ctx= useContext(CartContext);
 
      {productDetails.id==param.productid &&<div>
         <p>Reviews</p>
-        <span>5 Star</span>
+        <span>5 <i className='fas fa-star'></i></span>
+        <p>Awesome product</p>
         </div>}
     </div>
 

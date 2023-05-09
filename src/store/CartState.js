@@ -6,9 +6,14 @@ const CartState=(props)=>{
     const itemInitial=[];
     const priceAmount=[];
     const productDetail={};
+    
+ 
+    const initialToken=localStorage.getItem('auth_token')
+    const [token,setToken]=useState(initialToken)
     const [item, setItem] = useState(itemInitial);
     const [price, setprice] = useState(priceAmount);
     const [productDetails, setproductDetails] = useState(productDetail);
+    const [email, setemail] = useState("");
     
 
 
@@ -63,8 +68,18 @@ const CartState=(props)=>{
         setproductDetails(product)
     }
 
+    const loginHandler=(token)=>{
+        setToken(token)
+        localStorage.setItem('auth_token',token);
+     
+    }
+
+    const addEmail=(email)=>{
+        setemail(email)
+    }
+
 return(
-    <CartContext.Provider value={{item,addItem,addPrice,price,removeItem,updateItem,addProductDetail,productDetails}}>
+    <CartContext.Provider value={{item,addItem,addPrice,price,removeItem,updateItem,addProductDetail,productDetails,loginHandler,token,addEmail,email}}>
         {props.children}
     </CartContext.Provider>
 )

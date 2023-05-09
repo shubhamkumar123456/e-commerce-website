@@ -6,6 +6,8 @@ import "./Navbar.css";
 
 const Navbar = (props) => {
   const ctx = useContext(CartContext);
+  console.log("ctx email = ",ctx.email);
+  // console.log(ctx.token)
 
   return (
     // <Navbar bg='dark' expand="sm" variant='black'>
@@ -22,6 +24,12 @@ const Navbar = (props) => {
         </li>
         <li>
           <Link to="/contactus">Contact Us</Link>
+        </li>
+        <li>
+          <Link to="/login"><Button>Login</Button></Link>
+        </li>
+        <li>
+         <p>{ctx.email}</p>
         </li>
       </ul>
 
