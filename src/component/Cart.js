@@ -11,6 +11,10 @@ const Cart = (props) => {
   
   let sum=0;
 
+  const removeItemHandler=(id)=>{
+    ctx.removeItem(id)
+  }
+
   return <div className="cartcomponent">
   <h2>Cart</h2>
   <div className="cartcomponent-names" >
@@ -26,7 +30,7 @@ const Cart = (props) => {
             <p>{ele.title}</p>
             <p>{ele.price}</p>
             <p>{ele.quantity? ele.quantity:1}</p>
-            <Button variant="danger">Remove</Button>
+            <Button onClick={()=>{removeItemHandler(ele.id)}} variant="danger">Remove</Button>
             </div>
         )
     })}

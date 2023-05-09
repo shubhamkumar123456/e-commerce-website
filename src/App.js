@@ -1,11 +1,12 @@
 import { useContext, useState } from "react";
+
 import "./App.css";
 import Cart from "./component/Cart";
 
 import Navbar from "./component/Navbar";
 
 import { CartContext } from "./store/CartContext";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes ,Navigate  } from "react-router-dom";
 import About from "./pages/About";
 import CartState from "./store/CartState";
 import Store from "./pages/Store";
@@ -19,12 +20,14 @@ import Login from "./pages/Login";
 function App() {
   const ctx = useContext(CartContext);
 
+
   const [showCart, setShowCart] = useState(false);
   const cartClick = () => {
     setShowCart(!showCart);
   };
   return (
-    <CartState>
+    <>
+
       {showCart && <Cart showCart={showCart} setShowCart={setShowCart} />}
          <BrowserRouter>
       <div className="App">
@@ -34,19 +37,23 @@ function App() {
           <Navbar oncartClick={cartClick} />
 
           <Routes>
+         
             <Route path="/about"  element={<About />} />
-            <Route path="/store"  element={<Store />} />
-            <Route path="/home" element ={<Home/>}/>
+            {ctx.email && <Route path="/store"  element={<Store />} />}
+            {!ctx.email &&  <Route path="/store" element={ <Navigate to="/login" /> } />}
+          
+         <Route path="/" element ={<Home/>}/>
+    
             <Route path="/contactus" element ={<ContactUs/>}/>
             <Route path="/store/:productid" element ={<ProductPage />}/>
-            <Route path="/login" element ={<Login />}/>
+           {!ctx.email && <Route path="/login" element ={<Login />}/>}
           </Routes>
 
      
     
       </div>
       </BrowserRouter>
-    </CartState>
+    </>
   );
 }
 

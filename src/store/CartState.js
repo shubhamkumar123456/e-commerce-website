@@ -48,10 +48,10 @@ const CartState=(props)=>{
         setprice(price.concat(pri))
     }
 
-    const removeItem=(items)=>{
-        const i=items
+    const removeItem=(id)=>{
+        const i=id
         console.log(i)
-       const filterArr=item.filter(items=>items.name!==i)
+       const filterArr=item.filter(items=>items.id!==i)
        setItem(filterArr)
     }
 
