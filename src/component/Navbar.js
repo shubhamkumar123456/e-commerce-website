@@ -6,7 +6,7 @@ import "./Navbar.css";
 
 const Navbar = (props) => {
   const ctx = useContext(CartContext);
-  console.log("ctx email = ",ctx.email);
+  // console.log("ctx email = ",ctx.email);
   // console.log(ctx.token)
 
   return (
@@ -46,7 +46,7 @@ const Navbar = (props) => {
         }}
         className="text-white bg-success p-1"
       >
-        {ctx.item.length}
+        {ctx.item?ctx.item.length:"0"}
       </span>
      </div>
     </div>

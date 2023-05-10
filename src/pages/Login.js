@@ -60,6 +60,22 @@ const Login = () => {
       }).then((data)=>{
         authCtx.loginHandler(data.idToken);
         authCtx.addEmail(data.email)
+        const newEmail=data.email.split('@');
+        const splitEmail=newEmail[0]+newEmail[1].split('.')[0]+newEmail[1].split('.')[1]
+        fetch(`https://crudcrud.com/api/b9fe1f4630584350b95476ca51713d48/cart${splitEmail}`,{
+          method: 'GET',
+          headers:{
+            'Content-Type': 'application/json',
+          }
+      }).then((res)=>res.json().then((data)=>{
+       
+        authCtx.setItem(data[data.length - 1].items)
+        console.log(data[data.length - 1].items)
+        }))
+ 
+      
+
+        // authCtx.setItem()
         // localStorage.setItem('auth_token', data.idToken)
         history('/store')
   
